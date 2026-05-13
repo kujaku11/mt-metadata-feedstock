@@ -11,15 +11,17 @@ source:
   sha256: e51b11f8b569779fe56b1b140da1ff0a63a4d843944b3212bb0d1a72d341f7aa
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
+    - python {{ python_min }}
+    - setuptools >=45
+    - setuptools-scm >=6.2
+    - wheel
     - pip
-    - pytest-runner
-    - python >=3.10
   run:
     - python >=3.10
     - numpy
@@ -30,6 +32,7 @@ requirements:
     - xarray
     - loguru
     - pydantic
+    - email-validator
     - pyproj
     - typing-extensions
 
