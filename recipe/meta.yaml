@@ -1,5 +1,6 @@
 {% set name = "mt-metadata" %}
 {% set version = "1.0.9" %}
+{% set python_min = "3.10" %}
 
 
 package:
@@ -23,7 +24,7 @@ requirements:
     - wheel
     - pip
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - numpy
     - pandas
     - pyyaml
